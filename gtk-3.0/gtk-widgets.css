@@ -223,40 +223,24 @@ button:focus {
     box-shadow: 0 0 0 1px shade(@theme_bg_color, 0.2);
 }
 
+button:focus:hover {
+    box-shadow: 0 0 0 1px @theme_selected_bg_color;
+}
+
 button:active,
-button.flat:active,
-button:checked:active {
-    background-color: #a4abb8;
-    border-top-color: #000007;
-    border-left-color: #383c44;
-    border-right-color: #383c44;
-    border-bottom-color: #5f636b;
-    box-shadow: inset 0 -3px 4px 0 alpha(gray, 0.5),
-                inset 0 1px 0 0 alpha(gray, 0.6),
-                inset 0 8px 4px 0 alpha(gray, 0.45);
+button.flat:active {
+    background-image: linear-gradient(to top, @theme_base_color, @theme_bg_color);
 }
 
 button:checked,
-button.flat:checked {
-    background-color: #a3b8cb;
-    border-top-color: #62778a;
-    border-left-color: #43586b;
-    border-right-color: #43586b;
-    border-bottom-color: #22374a;
-}
-
-button:checked:hover {
-    box-shadow: inset 0 -3px 4px 0 alpha(white, 0.7),
-                inset 0 1px 0 0 alpha(white, 0.75),
-                inset 0 8px 4px 0 alpha(white, 0.55);
+button.flat:checked,
+button:checked:active {
+    background-image: none;
+    background-color: shade(@theme_selected_bg_color, 1.5);
 }
 
 button:disabled {
-    border-color: shade(@theme_bg_color, 0.9);
     color: alpha(@theme_fg_color, 0.7);
-    box-shadow: inset 0 -3px 4px 0 alpha(gray, 0.15),
-                inset 0 1px 0 0 alpha(gray, 0.2),
-                inset 0 8px 4px 0 alpha(gray, 0.1);
 }
 
 button:checked:disabled {
@@ -470,17 +454,20 @@ button.combo:only-child {
 }*/
 
 combobox button:not(:only-child) {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    padding: 7px 4px;
+    border-radius: 40px;
+    padding: 4px;
     margin: 0;
+    background-image: linear-gradient(to bottom right,
+                      shade(@theme_bg_color, 0.5),
+                      shade(@theme_base_color, 0.95) 45%,
+                      shade(@theme_base_color, 0.35) 85%);
 }
 
 /*********
  * entry *
  *********/
 entry {
-    padding: 7px 4px;
+    padding: 3px 4px;
     border-width: 1px;
     border-style: solid;
     border-top-color: shade(@theme_bg_color, 0.5);
@@ -1071,7 +1058,7 @@ menu menuitem {
 menu menuitem:hover,
 menu menuitem:active {
     border-color: shade(@theme_selected_bg_color, 0.9);
-    background-color: @theme_selected_bg_color;
+    background-color: transparent;
     background-image: linear-gradient(to right, @theme_selected_bg_color 60%, @menu_bg_color 95%);
 }
 
@@ -1549,67 +1536,42 @@ progressbar {
     background-color: transparent;
 }
 
-progressbar.vertical trough,
-progressbar.vertical progress {
-	min-width: 21px;
+progressbar.vertical progress,
+progressbar.vertical trough {
+	min-width: 16px;
 }
 
-progressbar.horizontal trough,
-progressbar.horizontal progress {
-    min-height: 21px;
+progressbar.horizontal progress,
+progressbar.horizontal trough {
+    min-width: 0;
+    min-height: 16px;
 }
 
 progressbar progress {
-    border: 1px solid #89310d;
-    border-radius: 0;
-    color: @theme_selected_fg_color;
-    background-color: @theme_selected_bg_color;
-    background-image: linear-gradient(to bottom,
-                                      #dba76b,
-                                      #ce8533 45%,
-                                      #c06600 50%,
-                                      #e88e28);
-    box-shadow: inset 0 -2px 2px 0 alpha(white, 0.4),
-                inset 0 1px alpha(white, 0.2);
-    border-right-width: 0;
-    border-left-width: 0;
+    background-image: url('assets/progressbar-fill.png');
+    background-size: 100% 16px;
+    border: 1px solid #4e5364;
+    box-shadow: inset 0 0 0 1px alpha(black, 0.05);
 }
 
 progressbar.vertical progress {
-    border: 1px solid #89310d;
-    background-image: linear-gradient(to right,
-                                      #dba76b,
-                                      #ce8533 45%,
-                                      #c06600 50%,
-                                      #e88e28);
-    box-shadow: inset -2px 0 2px 0 alpha(white, 0.4),
-                inset 1px 0 alpha(white, 0.2);
-    border-top-width: 0;
-    border-bottom-width: 0;
+    background-image: url('assets/progressbar-vert-fill.png');
+    background-size: 16px 100%;
+    box-shadow: inset 0 0 0 1px alpha(black, 0.05);
 }
 
 progressbar trough {
     border: 1px solid shade(@theme_bg_color, 0.8);
-    border-radius: 0;
-    color: @theme_fg_color;
-    background-color: shade(@theme_bg_color, 0.9);
-    background-image: linear-gradient(to bottom,
-                                      #eff0f2,
-                                      #dddee1 45%,
-                                      #ced0d4 50%,
-                                      #e3e5e9);
-    box-shadow: inset 0 -2px 2px 0 alpha(white, 0.6),
-                inset 0 1px white;
+    border-bottom-color: @theme_base_color;
+    border-right-color: @theme_base_color;
+    background-color: @theme_bg_color;
+    padding: 2px;
 }
 
 progressbar.vertical trough {
-    background-image: linear-gradient(to right,
-                                      #eff0f2,
-                                      #dddee1 45%,
-                                      #ced0d4 50%,
-                                      #e3e5e9);
-    box-shadow: inset -2px 0 2px 0 alpha(white, 0.6),
-                inset 1px 0 white;
+    border-color: shade(@theme_bg_color, 0.8);
+    border-bottom-color: @theme_base_color;
+    border-right-color: @theme_base_color;
 }
 
 /* level bars as used for password quality or remaining power */
@@ -1699,26 +1661,47 @@ scale.vertical {
 
 scale slider {
     border-radius: 0;
-    border: 1px solid @theme_fg_color;
-    background: linear-gradient(to bottom,
-                                @theme_base_color 45%,
-                                shade(@theme_bg_color, 0.8) 55%);
-
+    border: none;
+    background-image: linear-gradient(to right, transparent 80%, @theme_fg_color 90%), 
+                      linear-gradient(to bottom, @theme_base_color 45%, shade(@theme_bg_color, 0.8) 55%);
+    background-size: 4px 16px, auto;
+    box-shadow: 0 1px shade(@theme_bg_color, 0.45);
     /* widget sizing */
-    min-height: 8px;
-    min-width: 13px;
-    margin: -3px;
+    min-height: 6px;
+    min-width: 12px;
+    margin: -2px;
+}
+
+scale slider:hover,
+scale slider:active {
+    background-image: linear-gradient(to right, transparent 80%, #001870),
+                      linear-gradient(to bottom, #e0e8ff 45%, #8eafff 55%, #005aff 85%);
+    box-shadow: 0 1px #001870;
 }
 
 scale.vertical slider {
-    min-height: 13px;
-    min-width: 8px;
+    min-height: 12px;
+    min-width: 6px;
+    background-image: linear-gradient(to bottom, transparent 80%, @theme_fg_color 90%), 
+                      linear-gradient(to right, @theme_base_color 45%, shade(@theme_bg_color, 0.8) 55%);
+    background-size: 16px 4px, auto;
+    box-shadow: 1px 0 shade(@theme_bg_color, 0.45);
+}
+
+scale.vertical slider:hover,
+scale.vertical slider:active {
+    background-image: linear-gradient(to bottom, transparent 80%, #001870),
+                      linear-gradient(to right, #e0e8ff 45%, #8eafff 55%, #005aff 85%);
+    box-shadow: 1px 0 #001870;
 }
 
 scale slider:disabled {
     background-color: shade(@theme_bg_color, 0.95);
-    border-color: shade(@theme_bg_color, 0.75);
-    background-image: none;
+    border-color: shade(@theme_bg_color, 0.5);
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.75));
+    box-shadow: none;
 }
 
 scale.fine-tune slider:active,
@@ -1769,13 +1752,20 @@ scale.vertical indicator {
 
 scale trough {
     margin: 11px 9px;
-    border-color: shade(@theme_bg_color, 0.85);
-    border-radius: 0;
-    background-color: @theme_fg_color;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom,
+                                      shade(@theme_bg_color, 0.8),
+                                      @theme_fg_color);
+    border-image: url('assets/trough.png') 4 4 4 4;
 }
 
 scale.vertical trough {
     margin: 9px 11px;
+    background-image: linear-gradient(to right,
+                                      shade(@theme_bg_color, 0.8),
+                                      @theme_fg_color);
+    border-image: url('assets/trough-vert.png') 4 4 4 4;
 }
 
 scale highlight {
@@ -1803,14 +1793,16 @@ scrollbar {
     border: 1px solid shade(@theme_bg_color, 0.8);
     background: none;
     background-image: linear-gradient(to right,
-                                      shade(@theme_bg_color, 0.5),
-                                      shade(@theme_bg_color, 0.9) 50%);
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.95) 60%,
+                                      shade(@theme_bg_color, 0.85) 85%);
 }
 
 scrollbar.horizontal {
     background-image: linear-gradient(to bottom,
-                                      shade(@theme_bg_color, 0.5),
-                                      shade(@theme_bg_color, 0.9) 50%);
+                                      shade(@theme_bg_color, 0.9),
+                                      shade(@theme_bg_color, 0.95) 60%,
+                                      shade(@theme_bg_color, 0.85) 85%);
 }
 
 scrollbar button,
@@ -1823,31 +1815,49 @@ scrollbar button:disabled {
 
 scrollbar.vertical button {
     min-height: 8px;
+    background-image: url("assets/scrollbar-slider.png");
+    background-size: cover;
+}
+
+scrollbar.vertical button:hover,
+scrollbar.vertical button:active {
+    background-image: url("assets/scrollbar-slider-active.png");
 }
 
 scrollbar.horizontal button {
     min-width: 8px;
+    background-image: url("assets/scrollbar-slider-horiz.png");
+    background-size: cover;
+}
+
+scrollbar.horizontal button:hover,
+scrollbar.horizontal button:active {
+    background-image: url("assets/scrollbar-slider-horiz-active.png");
 }
 
 scrollbar slider {
     min-height: 45px;
     min-width: 0px;
     padding: 0;
-    border-width: 7px;
-    border-radius: 0px;
-    border-style: solid;
-    border-top-width: 11px;
-    border-bottom-width: 11px;
-    border-image: url("assets/scrollbar-slider.png") 11 7 11 7 stretch;
+    border: 7px solid transparent;
+    border-image: url("assets/scrollbar-slider.png") 7 7 7 7 stretch;
+}
+
+scrollbar slider:hover,
+scrollbar slider:active {
+    border-image: url("assets/scrollbar-slider-active.png") 7 7 7 7 stretch;
 }
 
 scrollbar.horizontal slider {
     min-width: 45px;
     min-height: 0;
     border-width: 7px;
-    border-left-width: 11px;
-    border-right-width: 11px;
-    border-image: url("assets/scrollbar-slider-horiz.png") 7 11 7 11 stretch;
+    border-image: url("assets/scrollbar-slider-horiz.png") 7 7 7 7 stretch;
+}
+
+scrollbar.horizontal slider:hover,
+scrollbar.horizontal slider:active {
+    border-image: url("assets/scrollbar-slider-horiz-active.png") 7 7 7 7 stretch;
 }
 
 scrollbar slider.fine-tune:hover:active {
@@ -2165,7 +2175,7 @@ spinbutton:disabled {
 spinbutton.horizontal entry {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    padding: 7px 15px;
+    padding: 3px 15px;
 }
 
 spinbutton.horizontal button.down {
@@ -3319,7 +3329,7 @@ decoration:backdrop {
 }
  */
 messagedialog.csd decoration {
-    border-radius: 0;
+    border-radius: 6px 6px 0 0;
     background-color: @theme_bg_color;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.13);
 }
@@ -3341,14 +3351,20 @@ messagedialog.csd decoration {
 .titlebar .titlebutton:not(separator) {
     padding: 4px;
     margin: 0;
-    border-radius: 4px;
-    background-color: @theme_selected_bg_color;
-    color: white;
+    border-radius: 16px;
+    background-image: linear-gradient(to bottom right,
+                      shade(@theme_bg_color, 0.5),
+                      shade(@theme_base_color, 0.95) 45%,
+                      shade(@theme_base_color, 0.35) 85%);
+    background-color: shade(@theme_bg_color, 0.5);
+    color: @theme_fg_color;
 }
 
-/* Cancel opacify icons */
-.titlebar .titlebutton:not(:backdrop) image {
-    color: white;
+.titlebar .titlebutton:not(separator):backdrop {
+    background-color: @theme_selected_bg_color;
+    background-image: none;
+    color: alpha(@theme_selected_fg_color, 0.4);
+    border-color: alpha(@theme_selected_fg_color, 0.35);
 }
 
 /* disable color for not titlebar headerbars */
