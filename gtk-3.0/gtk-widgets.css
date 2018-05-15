@@ -2292,15 +2292,6 @@ row:selected switch {
     box-shadow: none;
 }
 
-row:selected switch.slider:dir(rtl) {
-}
-
-row:selected switch.slider:dir(ltr) {
-}
-
-row:selected switch.slider:checked, row:selected switch.slider {
-}
-
 /************
  * textview *
  ************/
@@ -2338,7 +2329,7 @@ textview text selection:focus,
 textview text selection,
 flowbox flowboxchild:selected,
 spinbutton:not(.vertical) selection:focus,
- spinbutton:not(.vertical) selection,
+spinbutton:not(.vertical) selection,
 entry selection:focus,
 entry selection,
 modelbutton.flat:selected,
@@ -2681,7 +2672,7 @@ tooltip decoration {
  * treeview *
  ************/
 treeview {
-    -treeview-vertical-separator: 0;
+    border-radius: 0;
 }
 
 treeview.dnd {
@@ -2718,7 +2709,6 @@ GtkViewport frame {
 
 .view:selected,
 .view:selected:focus {
-    border-radius: 4px;
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
 }
@@ -2727,6 +2717,19 @@ GtkViewport frame {
 .view:selected:backdrop,
 iconview:selected:backdrop {
     background-color: shade(@theme_bg_color, 0.8);
+}
+
+.view:not(treeview):selected,
+iconview:selected,
+.view:not(treeview):selected:focus,
+iconview:selected:focus,
+.view:not(treeview) text:selected,
+iconview text:selected,
+textview text:selected,
+.view:not(treeview) text:selected:focus,
+iconview text:selected:focus,
+textview text:selected:focus {
+    border-radius: 4px;
 }
 
 /**************
