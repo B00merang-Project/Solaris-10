@@ -16,7 +16,7 @@ check row:selected:focus:hover {
 check:active,
 check row:selected:active,
 check row:selected:focus:active {
-    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-active.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-hover.png"));
 }
 
 check:disabled,
@@ -40,7 +40,7 @@ check row:selected:focus:checked:hover {
 check:checked:active,
 check row:selected:checked:active,
 check row:selected:focus:checked:active {
-    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-active.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-hover.png"));
 }
 
 check:active:disabled,  check:checked:disabled,
@@ -64,7 +64,7 @@ check row:selected:focus:indeterminate:hover {
 check:indeterminate:active,
 check row:selected:indeterminate:active,
 check row:selected:focus:indeterminate:active {
-    -gtk-icon-source: url("assets/checkbox-mixed-active.png");
+    -gtk-icon-source: url("assets/checkbox-mixed-hover.png");
 }
 
 check:indeterminate:disabled,
@@ -88,7 +88,7 @@ radio row:selected:focus:hover {
 radio:active,
 radio row:selected:active,
 radio row:selected:focus:active {
-    -gtk-icon-source: url("assets/radio-unselected-active.png");
+    -gtk-icon-source: url("assets/radio-unselected-hover.png");
 }
 
 radio:disabled,
@@ -100,7 +100,7 @@ radio row:selected:focus:disabled {
 radio:active,
 radio row:selected:active,
 radio row:selected:focus:active {
-    -gtk-icon-source: url("assets/radio-unselected-active.png");
+    -gtk-icon-source: url("assets/radio-unselected-hover.png");
 }
 
 radio:checked,
@@ -118,7 +118,7 @@ radio row:selected:focus:checked:hover {
 radio:checked:active,
 radio row:selected:checked:active,
 radio row:selected:focus:checked:active {
-    -gtk-icon-source: url("assets/radio-selected-active.png");
+    -gtk-icon-source: url("assets/radio-selected-hover.png");
 }
 
 radio:active:disabled,  radio:checked:disabled,
@@ -142,7 +142,7 @@ radio row:selected:focus:indeterminate:hover {
 radio:indeterminate:active,
 radio row:selected:indeterminate:active,
 radio row:selected:focus:indeterminate:active {
-    -gtk-icon-source: url("assets/radio-mixed-active.png");
+    -gtk-icon-source: url("assets/radio-mixed-hover.png");
 }
 
 radio:indeterminate:disabled,
