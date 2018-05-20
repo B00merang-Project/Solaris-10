@@ -1139,7 +1139,7 @@ StScrollBar {
 }
 #dash .overview-icon * {
 	icon-shadow: 0 0 0 0px #222;
-	color: white;
+	color: transparent;
 }
 .show-apps .overview-icon > StWidget,
 .show-apps .overview-icon > StWidget:hover,
