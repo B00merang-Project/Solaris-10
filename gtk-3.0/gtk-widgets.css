@@ -1004,6 +1004,7 @@ menu menuitem, .menu menuitem {
   border: none;
   border-radius: 0;
   color: @menu_fg_color;
+  text-shadow: none;
   background-color: @menu_bg_color; }
   menu menuitem:hover, .menu menuitem:hover {
     border-radius: 40px 0 0 40px;
