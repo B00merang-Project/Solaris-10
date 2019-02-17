@@ -1064,11 +1064,13 @@ popover:backdrop {
 modelbutton.flat, menuitem.button.flat, .menuitem.button.flat {
   padding: 2px 8px;
   border: none;
+  border-radius: 20px 0 0 20px;
   color: @theme_fg_color;
   background-color: transparent; }
   modelbutton.flat:hover, modelbutton.flat:selected, modelbutton.flat:active:hover, menuitem.button.flat:hover, menuitem.button.flat:selected, menuitem.button.flat:active:hover, .menuitem.button.flat:hover, .menuitem.button.flat:selected, .menuitem.button.flat:active:hover {
     color: @theme_selected_fg_color;
-    background-color: @theme_selected_bg_color; }
+    background-color: @theme_selected_bg_color;
+    background-image: linear-gradient(to right, @theme_selected_bg_color 60%, @menu_bg_color 95%); }
   modelbutton.flat > image, menuitem.button.flat > image, .menuitem.button.flat > image {
     padding-right: 4px; }
   modelbutton.flat.flat arrow.left, menuitem.button.flat.flat arrow.left, .menuitem.button.flat.flat arrow.left {
