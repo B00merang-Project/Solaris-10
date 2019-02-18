@@ -2098,9 +2098,6 @@ combobox entry:not(:only-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-stackswitcher button.text-button {
-  min-width: 80px; }
-
 tooltip {
   border-radius: 3px;
   box-shadow: none; }
