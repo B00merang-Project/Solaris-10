@@ -1,5 +1,8 @@
-# Solaris-10
-Solaris 10 theme for Linux (only cinnamon for now)
+[![built-with-azurra-framework](https://github.com/Elbullazul/Azurra_framework/raw/assets/azurra_framework_smaller.png)](https://github.com/Elbullazul/Azurra_framework)
+
+# Solaris 10 'Blueprint' theme
+
+Solaris 10 theme for Linux
 
 ![solaris-10](https://github.com/B00merang-Project/gallery/raw/master/Solaris%2010%20Blueprint%20(2).png)
 
