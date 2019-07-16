@@ -604,11 +604,12 @@ StScrollBar {
 		font-weight: normal;
 		color: black;
 		text-shadow:none;
+		icon-shadow:none;
 		transition-duration: 100ms;
 }
 		#panel .panel-button .app-menu-icon {
-            width: 0;
-            height: 0;
+      width: 0;
+      height: 0;
 			-st-icon-style: symbolic;
 			margin-left: 2px;
 			margin-right: 0px; }
