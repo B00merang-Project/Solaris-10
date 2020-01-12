@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Solaris 10
+Comment=A GTK theme based on Solaris 10
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Solaris 10
+MetacityTheme=Solaris 10
+IconTheme=blueprint
+CursorTheme=DMZ-Black
+ButtonLayout=close,minimize,maximize:
