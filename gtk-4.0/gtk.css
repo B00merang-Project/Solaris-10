@@ -84,7 +84,8 @@ label > selection {
   color: #FFFFFF;
   background-color: #594FBF; }
   label > selection:focus-within {
-    color: #594FBF; }
+    color: #FFFFFF;
+    background-color: #594FBF; }
 
 label:disabled {
   color: #737373; }
@@ -617,7 +618,7 @@ searchbar {
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: #cfcfcf;
-  background-color: #E6E6E6; }
+  background-color: #dbdbdb; }
 
 .nautilus-window .searchbar-container {
   margin-top: -1px; }
@@ -1038,27 +1039,23 @@ menubar, .menubar {
   menubar:backdrop, .menubar:backdrop {
     color: #000000;
     background-color: #E6E6E6; }
-
-menubar > menuitem, .menubar > menuitem {
-  padding: 3px 5px;
-  border: none;
-  color: #000000;
-  background-color: transparent; }
-  menubar > menuitem:hover, .menubar > menuitem:hover {
-    border-radius: 40px 0 0 40px;
-    color: #FFFFFF;
-    text-shadow: 1px 1px black;
-    background-color: #594FBF;
-    background-image: linear-gradient(to right, #594FBF 60%, #E6E6E6 95%); }
-  menubar > menuitem:disabled, .menubar > menuitem:disabled {
-    color: #737373;
-    background-color: transparent; }
-  menubar > menuitem:backdrop, .menubar > menuitem:backdrop {
+  menubar > menuitem, .menubar > menuitem {
+    padding: 3px 5px;
+    border: none;
     color: #000000;
     background-color: transparent; }
-
-menubar menu menuitem {
-  text-shadow: none; }
+    menubar > menuitem:hover, .menubar > menuitem:hover {
+      border-radius: 40px 0 0 40px;
+      color: #FFFFFF;
+      text-shadow: 1px 1px black;
+      background-color: #594FBF;
+      background-image: linear-gradient(to right, #594FBF 60%, #E6E6E6 95%); }
+    menubar > menuitem:disabled, .menubar > menuitem:disabled {
+      color: #737373;
+      background-color: transparent; }
+    menubar > menuitem:backdrop, .menubar > menuitem:backdrop {
+      color: #000000;
+      background-color: transparent; }
 
 notebook {
   padding: 0; }
@@ -1627,8 +1624,7 @@ window.dialog.print drawing {
 window.dialog.print .dialog-action-box {
   margin: 12px; }
 
-frame,
-.frame {
+frame, .frame {
   border: 1px solid #cfcfcf; }
 
 frame {
