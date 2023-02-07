@@ -8,7 +8,6 @@ Solaris 10 theme for Linux
 
 ### Supported platforms
 - Any GTK-based desktop
-- No shell-scpecitifc theme (yet)
 - Cinnamon
 - Gnome
 
