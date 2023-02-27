@@ -1508,16 +1508,20 @@ scale {
   min-height: 10px;
   min-width: 10px;
   padding: 12px; }
+  scale > fill,
   scale > trough {
     border-radius: 10px;
     border: 4px solid transparent;
     background-color: rgba(0, 0, 0, 0.2);
     background-image: linear-gradient(to bottom, #b8b8b8, #000000);
     border-image: url("assets/scale-h-trough.png") 4 4 4 4; }
+    scale > fill:disabled,
     scale > trough:disabled {
       background-color: rgba(0, 0, 0, 0.15); }
+      scale > fill:disabled:backdrop,
       scale > trough:disabled:backdrop {
         background-color: rgba(0, 0, 0, 0.08); }
+    scale > fill:backdrop,
     scale > trough:backdrop {
       background-color: rgba(0, 0, 0, 0.1); }
     scale.vertical > trough {
@@ -1530,18 +1534,19 @@ scale {
     background-image: none; }
   scale > trough > slider {
     min-width: 15px;
-    min-height: 8px;
+    min-height: 7.5px;
     margin: -3px;
     border: none;
     border-radius: 0px;
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.09);
     color: #000000;
     background-color: transparent;
-    background-image: url("assets/scale-h-slider.png"); }
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: none; }
     scale > trough > slider:hover {
       color: #000000;
-      background-color: #FFFFFF;
-      background-image: url("assets/scale-h-slider-hover.png"); }
+      background-color: #FFFFFF; }
     scale > trough > slider:disabled {
       opacity: 0.75; }
       scale > trough > slider:disabled:backdrop {
@@ -1549,12 +1554,16 @@ scale {
     scale > trough > slider:backdrop {
       color: #000000;
       background-color: transparent; }
-    scale.vertical > trough > slider {
-      min-width: 8px;
-      min-height: 15px;
-      background-image: url("assets/scale-v-slider.png"); }
-      scale.vertical > trough > slider:hover {
-        background-image: url("assets/scale-v-slider-hover.png"); }
+  scale.horizontal > trough > slider {
+    background-image: url("assets/scale-h-slider.png"); }
+    scale.horizontal > trough > slider:hover {
+      background-image: url("assets/scale-h-slider-hover.png"); }
+  scale.vertical > trough > slider {
+    min-width: 7.5px;
+    min-height: 15px;
+    background-image: url("assets/scale-v-slider.png"); }
+    scale.vertical > trough > slider:hover {
+      background-image: url("assets/scale-v-slider-hover.png"); }
   scale.fine-tune.horizontal {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -1889,34 +1898,40 @@ calendar {
   border-style: solid;
   border-color: #cfcfcf;
   color: #000000; }
-  calendar.header {
+  calendar > header {
     border: none;
     border-bottom: 1px solid #e4e4e4;
     color: #000000; }
-  calendar.button {
-    color: rgba(0, 0, 0, 0.45); }
-    calendar.button:hover {
-      color: #000000; }
-    calendar.button:backdrop {
-      color: rgba(0, 0, 0, 0.45); }
-    calendar.button:disabled {
-      color: rgba(115, 115, 115, 0.45); }
-  calendar:selected {
-    border-radius: 4px;
-    color: #FFFFFF;
-    background-color: #594FBF; }
-    calendar:selected:backdrop {
+    calendar > header > button {
+      border: none;
+      box-shadow: none;
+      background: none;
+      border-radius: 0; }
+      calendar > header > button:hover {
+        color: #000000; }
+      calendar > header > button:backdrop {
+        color: #000000; }
+      calendar > header > button:disabled {
+        color: #737373; }
+  calendar > grid > label.today {
+    box-shadow: inset 0px -2px #cfcfcf; }
+    calendar > grid > label.today:selected {
+      box-shadow: none; }
+  calendar > grid > label:focus {
+    outline-color: #cfcfcf;
+    outline-offset: -2px;
+    outline-width: 2px;
+    outline-style: solid; }
+  calendar > grid > label.day-number {
+    padding: 3px; }
+    calendar > grid > label.day-number:selected {
       color: #FFFFFF;
-      background-color: #594FBF; }
-  calendar:indeterminate {
-    color: alpha(currentColor, 0.1); }
-  calendar.highlight {
-    color: #737373; }
-    calendar.highlight:backdrop {
-      color: #737373; }
-  calendar:backdrop {
-    color: #000000;
-    border-color: #cfcfcf; }
+      background-color: #594FBF;
+      border-radius: 3px; }
+    calendar > grid > label.day-number:checked {
+      background-color: rgba(89, 79, 191, 0.3); }
+  calendar > grid > label.day-number.other-month {
+    color: alpha(currentColor, 0.3); }
 
 window.dialog.message .titlebar {
   min-height: 20px;
