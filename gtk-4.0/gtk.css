@@ -1258,90 +1258,70 @@ notebook {
       color: #8a8a8a; }
 
 scrollbar {
-  border: none;
-  background-color: transparent; }
-  scrollbar trough {
-    border: none;
-    border-radius: 0; }
+  border: 1px solid #a6a6a6;
+  background-size: 100% 100%;
+  background-color: transparent;
+  /*
+  &.horizontal button {
+    &.down { -gtk-icon-source: -gtk-icontheme("pan-right-symbolic"); }
+    &.up { -gtk-icon-source: -gtk-icontheme("pan-left-symbolic"); }
+  }
+
+  &.vertical button {
+    &.down { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+    &.up { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
+  }
+  */ }
+  scrollbar > range > trough > slider {
+    margin: 0px;
+    min-width: 0px;
+    min-height: 0px;
+    border-radius: 0px;
+    border: 7px solid transparent;
+    background-color: transparent;
+    background-clip: padding-box; }
+  scrollbar.horizontal {
+    background-image: url("assets/trough-h.png"); }
+    scrollbar.horizontal > range > trough > slider {
+      border-image: url("assets/scrollbar-h-slider.png") 7 7 7 7 stretch; }
+      scrollbar.horizontal > range > trough > slider:hover {
+        border-image: url("assets/scrollbar-h-slider-active.png") 7 7 7 7 stretch; }
+  scrollbar.vertical {
+    background-image: url("assets/trough-v.png"); }
+    scrollbar.vertical > range > trough > slider {
+      border-image: url("assets/scrollbar-v-slider.png") 7 7 7 7 stretch; }
+      scrollbar.vertical > range > trough > slider:hover {
+        border-image: url("assets/scrollbar-v-slider-active.png") 7 7 7 7 stretch; }
+  scrollbar.horizontal > range > trough > slider {
+    min-width: 40px; }
+  scrollbar.vertical > range > trough > slider {
+    min-height: 40px; }
+  scrollbar > range.fine-tune > trough > slider {
+    min-width: -2px;
+    min-height: -2px;
+    border-radius: 0px; }
+  scrollbar > range.fine-tune.horizontal > trough > slider {
+    margin-top: 1px;
+    margin-bottom: 1px; }
+  scrollbar > range.fine-tune.vertical > trough > slider {
+    margin-left: 1px;
+    margin-right: 1px; }
   scrollbar.overlay-indicator:not(.dragging):not(.hovering) {
-    border: 1px solid #a6a6a6;
-    opacity: 1;
-    margin: 0;
-    background-color: transparent; }
+    opacity: 1; }
+    scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider {
+      margin: 0px; }
+    scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) > range > trough > slider {
+      min-width: 40px;
+      min-height: 0px; }
+    scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) > range > trough > slider {
+      min-width: 0px;
+      min-height: 40px; }
   scrollbar.overlay-indicator.dragging, scrollbar.overlay-indicator.hovering {
     opacity: 1; }
-  scrollbar.horizontal {
-    border: 1px solid #a6a6a6;
-    background-image: url("assets/trough-h.png");
-    background-size: 100% 100%; }
-    scrollbar.horizontal slider {
-      min-width: 40px;
-      border-radius: 0px;
-      background-clip: padding-box;
-      border: 7px solid transparent;
-      border-image: url("assets/scrollbar-h-slider.png") 7 7 7 7 stretch; }
-      scrollbar.horizontal slider:hover {
-        border-image: url("assets/scrollbar-h-slider-active.png") 7 7 7 7 stretch; }
-    scrollbar.horizontal button {
-      border: none;
-      padding: 0;
-      border-radius: 0;
-      color: transparent;
-      box-shadow: none;
-      min-width: 13px;
-      min-height: 13px; }
-      scrollbar.horizontal button:backdrop {
-        color: transparent; }
-      scrollbar.horizontal button.down {
-        background-image: url("assets/stepper-right.png"); }
-        scrollbar.horizontal button.down:hover {
-          background-image: url("assets/stepper-right-hover.png"); }
-        scrollbar.horizontal button.down:active {
-          background-image: url("assets/stepper-right-active.png"); }
-      scrollbar.horizontal button.up {
-        background-image: url("assets/stepper-left.png"); }
-        scrollbar.horizontal button.up:hover {
-          background-image: url("assets/stepper-left-hover.png"); }
-        scrollbar.horizontal button.up:active {
-          background-image: url("assets/stepper-left-active.png"); }
-  scrollbar.vertical {
-    border: 1px solid #a6a6a6;
-    background-image: url("assets/trough-v.png");
-    background-size: 100% 100%; }
-    scrollbar.vertical slider {
-      min-height: 40px;
-      border: none;
-      border-radius: 0px;
-      background-clip: padding-box;
-      border: 7px solid transparent;
-      border-image: url("assets/scrollbar-v-slider.png") 7 7 7 7 stretch; }
-      scrollbar.vertical slider:hover {
-        border-image: url("assets/scrollbar-v-slider-active.png") 7 7 7 7 stretch; }
-    scrollbar.vertical button {
-      border: none;
-      padding: 0;
-      border-radius: 0;
-      color: transparent;
-      box-shadow: none;
-      min-width: 13px;
-      min-height: 13px; }
-      scrollbar.vertical button:backdrop {
-        color: transparent; }
-      scrollbar.vertical button.down {
-        background-image: url("assets/stepper-down.png"); }
-        scrollbar.vertical button.down:hover {
-          background-image: url("assets/stepper-down-hover.png"); }
-        scrollbar.vertical button.down:active {
-          background-image: url("assets/stepper-down-active.png"); }
-      scrollbar.vertical button.up {
-        background-image: url("assets/stepper-up.png"); }
-        scrollbar.vertical button.up:hover {
-          background-image: url("assets/stepper-up-hover.png"); }
-        scrollbar.vertical button.up:active {
-          background-image: url("assets/stepper-up-active.png"); }
-  treeview ~ scrollbar.vertical {
-    border-top: 1px solid #cfcfcf;
-    margin-top: -1px; }
+
+treeview ~ scrollbar.vertical {
+  border-top: 1px solid #cfcfcf;
+  margin-top: -1px; }
 
 switch {
   font-size: 0;
