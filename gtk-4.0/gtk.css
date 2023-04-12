@@ -1630,36 +1630,28 @@ progressbar {
   font-size: smaller;
   color: gray; }
   progressbar > trough {
+    padding: 2px;
     border-radius: 0px;
     border: 1px solid #b8b8b8;
     border-bottom-color: #FFFFFF;
     border-right-color: #FFFFFF;
-    background-color: #E6E6E6;
-    padding: 2px; }
+    background-color: #E6E6E6; }
   progressbar > trough > progress {
-    background-image: url("assets/progressbar-h.png");
-    background-size: 100% 16px;
     border: 1px solid #4e5364;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
-  progressbar.vertical > trough {
-    border-radius: 0px;
-    border: 1px solid #b8b8b8;
-    border-bottom-color: #FFFFFF;
-    border-right-color: #FFFFFF;
-    background-color: #E6E6E6;
-    padding: 2px; }
   progressbar.vertical > trough > progress {
     background-image: url("assets/progressbar-v.png");
-    background-size: 16px 100%;
-    border: 1px solid #4e5364;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
+    background-size: 16px 100%; }
+  progressbar.horizontal > trough > progress {
+    background-image: url("assets/progressbar-h.png");
+    background-size: 100% 16px; }
   progressbar.horizontal > trough {
     min-width: 150px; }
   progressbar.vertical > trough {
     min-height: 80px; }
-  progressbar.horizontal > trough, progressbar.horizontal > progress {
+  progressbar.horizontal > trough, progressbar.horizontal > trough > progress {
     min-height: 16px; }
-  progressbar.vertical > trough, progressbar.vertical > progress {
+  progressbar.vertical > trough, progressbar.vertical > trough > progress {
     min-width: 16px; }
 
 levelbar trough {
