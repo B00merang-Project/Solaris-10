@@ -900,21 +900,21 @@ headerbar {
       color: transparent;
       background-color: transparent;
       background-size: 16px 16px;
-      background-position: center;
       background-repeat: no-repeat;
+      background-position: center center;
       box-shadow: none;
       -gtk-icon-shadow: none;
-      background: url("assets/close-normal.png") 100% 100%; }
+      background-image: url("assets/close-normal.png"); }
       headerbar windowcontrols button.close:hover {
-        background: url("assets/close-hover.png") 100% 100%; }
+        background-image: url("assets/close-hover.png"); }
       headerbar windowcontrols button.close:active {
-        background: url("assets/close-active.png") 100% 100%; }
+        background-image: url("assets/close-active.png"); }
       headerbar windowcontrols button.close:backdrop {
-        background: url("assets/close-backdrop.png") 100% 100%; }
+        background-image: url("assets/close-backdrop.png"); }
         headerbar windowcontrols button.close:backdrop:hover {
-          background: url("assets/close-hover.png") 100% 100%; }
+          background-image: url("assets/close-hover.png"); }
         headerbar windowcontrols button.close:backdrop:active {
-          background: url("assets/close-active.png") 100% 100%; }
+          background-image: url("assets/close-active.png"); }
     headerbar windowcontrols button.maximize {
       padding: 0px;
       min-width: 16px;
@@ -923,21 +923,21 @@ headerbar {
       color: transparent;
       background-color: transparent;
       background-size: 16px 16px;
-      background-position: center;
       background-repeat: no-repeat;
+      background-position: center center;
       box-shadow: none;
       -gtk-icon-shadow: none;
-      background: url("assets/maximize-normal.png") 100% 100%; }
+      background-image: url("assets/maximize-normal.png"); }
       headerbar windowcontrols button.maximize:hover {
-        background: url("assets/maximize-hover.png") 100% 100%; }
+        background-image: url("assets/maximize-hover.png"); }
       headerbar windowcontrols button.maximize:active {
-        background: url("assets/maximize-active.png") 100% 100%; }
+        background-image: url("assets/maximize-active.png"); }
       headerbar windowcontrols button.maximize:backdrop {
-        background: url("assets/maximize-backdrop.png") 100% 100%; }
+        background-image: url("assets/maximize-backdrop.png"); }
         headerbar windowcontrols button.maximize:backdrop:hover {
-          background: url("assets/maximize-hover.png") 100% 100%; }
+          background-image: url("assets/maximize-hover.png"); }
         headerbar windowcontrols button.maximize:backdrop:active {
-          background: url("assets/maximize-active.png") 100% 100%; }
+          background-image: url("assets/maximize-active.png"); }
     headerbar windowcontrols button.minimize {
       padding: 0px;
       min-width: 16px;
@@ -946,21 +946,21 @@ headerbar {
       color: transparent;
       background-color: transparent;
       background-size: 16px 16px;
-      background-position: center;
       background-repeat: no-repeat;
+      background-position: center center;
       box-shadow: none;
       -gtk-icon-shadow: none;
-      background: url("assets/minimize-normal.png") 100% 100%; }
+      background-image: url("assets/minimize-normal.png"); }
       headerbar windowcontrols button.minimize:hover {
-        background: url("assets/minimize-hover.png") 100% 100%; }
+        background-image: url("assets/minimize-hover.png"); }
       headerbar windowcontrols button.minimize:active {
-        background: url("assets/minimize-active.png") 100% 100%; }
+        background-image: url("assets/minimize-active.png"); }
       headerbar windowcontrols button.minimize:backdrop {
-        background: url("assets/minimize-backdrop.png") 100% 100%; }
+        background-image: url("assets/minimize-backdrop.png"); }
         headerbar windowcontrols button.minimize:backdrop:hover {
-          background: url("assets/minimize-hover.png") 100% 100%; }
+          background-image: url("assets/minimize-hover.png"); }
         headerbar windowcontrols button.minimize:backdrop:active {
-          background: url("assets/minimize-active.png") 100% 100%; }
+          background-image: url("assets/minimize-active.png"); }
     .maximized headerbar windowcontrols button.maximize {
       padding: 0px;
       min-width: 16px;
@@ -969,21 +969,21 @@ headerbar {
       color: transparent;
       background-color: transparent;
       background-size: 16px 16px;
-      background-position: center;
       background-repeat: no-repeat;
+      background-position: center center;
       box-shadow: none;
       -gtk-icon-shadow: none;
-      background: url("assets/restore-normal.png") 100% 100%; }
+      background-image: url("assets/restore-normal.png"); }
       .maximized headerbar windowcontrols button.maximize:hover {
-        background: url("assets/restore-hover.png") 100% 100%; }
+        background-image: url("assets/restore-hover.png"); }
       .maximized headerbar windowcontrols button.maximize:active {
-        background: url("assets/restore-active.png") 100% 100%; }
+        background-image: url("assets/restore-active.png"); }
       .maximized headerbar windowcontrols button.maximize:backdrop {
-        background: url("assets/restore-backdrop.png") 100% 100%; }
+        background-image: url("assets/restore-backdrop.png"); }
         .maximized headerbar windowcontrols button.maximize:backdrop:hover {
-          background: url("assets/restore-hover.png") 100% 100%; }
+          background-image: url("assets/restore-hover.png"); }
         .maximized headerbar windowcontrols button.maximize:backdrop:active {
-          background: url("assets/restore-active.png") 100% 100%; }
+          background-image: url("assets/restore-active.png"); }
 
 pathbar > button.text-button, pathbar > button.image-button, pathbar > button {
   padding-left: 4px;
